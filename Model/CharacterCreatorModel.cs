@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,21 +16,17 @@ namespace ShaRPGame.Model
         {
         }
 
-        public static Character GetNewCharacter()
+        public static CharacterModel GetNewCharacter()
         {
-            return new Character();
+            return new CharacterModel();
         }
         public static void CreateCharacter()
         {
             Console.WriteLine("Creating a new character.");
-            Character character = CharacterCreatorModel.GetNewCharacter();
-            character.speak();
+            CharacterModel character = CharacterCreatorModel.GetNewCharacter();
             CharacterListModel charList = CharacterListModel.GetIntance();
             charList.GetCharacterList().Add(character);
-            foreach (Character chara in charList.GetCharacterList())
-            {
-                Console.WriteLine(chara.speak());
-            }
+            Console.WriteLine($"The character {character.GetName()} has been created!");
         }
 
     }

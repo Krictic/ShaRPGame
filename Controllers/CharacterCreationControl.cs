@@ -8,29 +8,26 @@ namespace ShaRPGame.Controllers
 {
     internal class CharacterCreationControl
     {
-
         public static void ProcessInput(string input)
         {
-            bool isValidInput = false;
-            while (isValidInput == false)
+            switch (input)
             {
-                switch (input)
-                {
-                    case "-1":
-                    case "M":
-                        Console.Clear();
-                        MainMenuView.Menu();
-                        isValidInput = true;
-                        break;
-                    case "1":
-                    case "C":
-                        Console.Clear();
-                        isValidInput = true;
-                        CharacterCreatorModel.CreateCharacter();
-                        break;
-                    default:
-                        break;
-                }
+                case "-1":
+                case "R":
+                    Console.Clear();
+                    MainMenuView.Menu();
+                    break;
+                case "1":
+                case "C":
+                    Console.Clear();
+                    CharacterCreatorModel.CreateCharacter();
+                    CharacterCreatorView.Menu();
+                    break;
+                default:
+                    Console.Clear();
+                    Gui.Alert("Invalid input, pleae try again.");
+                    CharacterCreatorView.Menu();
+                    break;
             }
         }
     }

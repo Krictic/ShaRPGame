@@ -16,7 +16,7 @@ namespace ShaRPGame.View
 
         public static void MenuOptions()
         {
-            Gui.MenuTitle("Welcome to Character Selector!");
+            Gui.MenuTitle("Welcome to CharacterModel Selector!");
         }
     }
 }
