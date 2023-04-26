@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShaRPGame.Model.Entities.NPCs
 {
-    internal class Merchant : IEntity, IJobs, ISkills, ITraits, IStatuses
+    internal class Merchant : IJobs, ISkills, ITraits, IStatuses
     {
         // Description Variables
         public string Name { set; get; } = "Playc Holdr";

@@ -9,10 +9,10 @@ namespace ShaRPGame.Model.InstanceModels
 {
     internal sealed class ActiveCharacterModel
     {
-        private CharacterModel? activeCharacter;
+        private CharacterModel activeCharacter;
         private static ActiveCharacterModel _instance;
 
-        public CharacterModel? GetActiveCharacter()
+        public CharacterModel GetActiveCharacter()
         {
             return activeCharacter;
         }
@@ -20,6 +20,7 @@ namespace ShaRPGame.Model.InstanceModels
         public void SetActiveCharacter(CharacterModel? value)
         {
             activeCharacter = value;
+            Console.WriteLine(activeCharacter.GetName());
         }
 
         public static ActiveCharacterModel GetIntance()

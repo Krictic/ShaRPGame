@@ -64,7 +64,7 @@ namespace ShaRPGame.Model.Entities.EntityInterfaces
 
         // The ability to convince someone to agree or do something you wish.
         // (Charisma + Intellect + Will) / 3.
-        int Rethorics { set; get; };
+        int Rethorics { set; get; }
 
         // How fast your chaarcter can move, determined how many steps they can take every turn.
         // (Agility + Vitality) / 2.

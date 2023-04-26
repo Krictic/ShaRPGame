@@ -1,9 +1,9 @@
 ﻿using ShaRPG.View.GUI;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ShaRPGame.Controllers;
+using ShaRPGame.Model;
+using ShaRPGame.Model.Entities.PlayerCharacters;
+using ShaRPGame.Model.InstanceModels;
+using System.Collections;
 
 namespace ShaRPGame.View
 {
@@ -16,7 +16,10 @@ namespace ShaRPGame.View
 
         public static void MenuOptions()
         {
-            Gui.MenuTitle("Welcome to CharacterModel Selector!");
+            Gui.MenuTitle("Welcome to Character Selector!");
+            
+            CharacterSelectorController.ListProcessing();
+
         }
     }
 }

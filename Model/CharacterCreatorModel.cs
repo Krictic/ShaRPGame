@@ -1,4 +1,5 @@
-﻿using ShaRPGame.Model.Entities.PlayerCharacters;
+﻿using ShaRPG.View.GUI;
+using ShaRPGame.Model.Entities.PlayerCharacters;
 using ShaRPGame.Model.InstanceModels;
 using System;
 using System.Collections;
@@ -23,10 +24,15 @@ namespace ShaRPGame.Model
         public static void CreateCharacter()
         {
             Console.WriteLine("Creating a new character.");
-            CharacterModel character = CharacterCreatorModel.GetNewCharacter();
-            CharacterListModel charList = CharacterListModel.GetIntance();
-            charList.GetCharacterList().Add(character);
+            CharacterModel character = new CharacterModel();
             Console.WriteLine($"The character {character.GetName()} has been created!");
+            CharacterListModel charList = CharacterListModel.GetIntance();
+            charList.AddToCharList(character);
+
+            foreach (CharacterModel item in charList.GetCharacterList())
+            {
+                Console.WriteLine(item.GetName());
+            }
         }
 
     }

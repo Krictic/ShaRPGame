@@ -1,9 +1,10 @@
-﻿using System.Dynamic;
+﻿using System.Collections;
+using System.Dynamic;
 using ShaRPGame.Model.Entities.EntityInterfaces;
 
 namespace ShaRPGame.Model.Entities.PlayerCharacters
 {
-    internal class CharacterModel : IEntity, IJobs, ISkills, ITraits, IStatuses, IPlayer
+    internal class CharacterModel : IJobs, ISkills, ITraits, IStatuses
     {
         // Description Variables
         public string Name { set; get; } = "Playc Holdr";
@@ -13,7 +14,7 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         public int Level { set; get; } = 1;
         // Progression Variables
         public int StatPoints { get; set; }
-        public int SkillPoints { get; set ; }
+        public int SkillPoints { get; set; }
         // Core Stat Variables
         public int Might { get; set; }
         public int Vitality { get; set; }
@@ -98,6 +99,15 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
             int level = this.Level;
 
             return $"My name is {name} and I am {age}, my bio is {biography} and im currently a level {level} {jobClass}.";
+        }
+
+        // Display Methods
+
+        public ArrayList ToArrayList()
+        {
+            ArrayList array = new ArrayList();
+            array.Add(this);
+            return array;
         }
     }
 }

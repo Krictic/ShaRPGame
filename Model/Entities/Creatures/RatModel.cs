@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShaRPGame.Model.Entities.Creatures
 {
-    internal class RatModel : IEntity, ICreature, IStatuses, ISkills, ITraits
+    internal class RatModel : ICreature, IStatuses, ISkills, ITraits
     {
         // Description Variables
         public string Name { set; get; } = "Playc Holdr";

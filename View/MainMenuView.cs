@@ -1,6 +1,7 @@
 ﻿using ShaRPG.View.GUI;
 using ShaRPGame.Controllers;
 using ShaRPGame.Model.Entities.PlayerCharacters;
+using ShaRPGame.Model.InstanceModels;
 
 namespace ShaRPGame.View
 {
@@ -15,6 +16,12 @@ namespace ShaRPGame.View
 
         private static void MenuOptions()
         {
+            Console.Clear();
+            CharacterModel activeCharacter = ActiveCharacterModel.GetIntance().GetActiveCharacter();
+            if (activeCharacter != null)
+            {
+                Gui.PrintLine($"Active Character: {activeCharacter.GetName()} | Job: {activeCharacter.GetJobClass()}");
+            }
             Gui.MenuTitle("Welcome to ShaRPGame!");
             Gui.MenuOption(1, "(N)ew game");
             Gui.MenuOption(2, "(L)oad Game");

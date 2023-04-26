@@ -1,10 +1,5 @@
 ﻿using ShaRPGame.Model.Entities.PlayerCharacters;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShaRPGame.Model.InstanceModels
 {
@@ -13,11 +8,10 @@ namespace ShaRPGame.Model.InstanceModels
 
         public CharacterListModel()
         {
-            ArrayList CharList = new ArrayList();
-            SetCharacterList(CharList);
+            InitCharacterList();
         }
 
-        private ArrayList CharacterList { get; set; }
+        public ArrayList CharacterList { get; set; }
         private static CharacterListModel _instance { get; set; }
 
         public ArrayList GetCharacterList()
@@ -25,12 +19,12 @@ namespace ShaRPGame.Model.InstanceModels
             return CharacterList;
         }
 
-        public void SetCharacterList(ArrayList value)
+        public void InitCharacterList()
         {
-            CharacterList = value;
+            CharacterList = new ArrayList();
         }
 
-        public void AddToCharList(CharacterListModel character)
+        public void AddToCharList(CharacterModel character)
         {
             GetCharacterList().Add(character);
         }

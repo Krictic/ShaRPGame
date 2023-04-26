@@ -1,4 +1,7 @@
-﻿using ShaRPGame.Model.InstanceModels;
+﻿using ShaRPG.View.GUI;
+using ShaRPGame.Model.Entities.PlayerCharacters;
+using ShaRPGame.Model.InstanceModels;
+using System.Collections;
 
 namespace ShaRPGame.Model
 {
@@ -9,9 +12,24 @@ namespace ShaRPGame.Model
 
         }
 
-        public void ActivateCharacter()
+        public static void ActivateCharacter(CharacterModel character)
         {
-            ActiveCharacterModel.GetIntance();
+            ActiveCharacterModel activeCharacter =  ActiveCharacterModel.GetIntance();
+            activeCharacter.SetActiveCharacter(character);
+        }
+
+        public static CharacterListModel ListAll()
+        {
+            CharacterListModel charList = CharacterListModel.GetIntance();
+            int i = 0;
+
+            foreach (CharacterModel item in charList.GetCharacterList())
+            {
+                Gui.MenuOption(i, item.GetName());
+                i++;
+            }
+
+            return charList;
         }
     }
 }

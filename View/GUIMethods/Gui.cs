@@ -44,7 +44,7 @@
         public static void PrintLine(string str)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            str = string.Format("\t {0} \n", str);
+            str = string.Format("{0} \n", str);
             Console.WriteLine(str);
         }
 
