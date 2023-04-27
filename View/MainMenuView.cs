@@ -10,7 +10,7 @@ namespace ShaRPGame.View
         public static void Menu()
         {
             MenuOptions();
-            string input = Gui.GetInputInt("Select one option.");
+            string input = Gui.GetInputIntUpperCase("Select one option.");
             MainMenuController.ProcessInput(input);
         }
 

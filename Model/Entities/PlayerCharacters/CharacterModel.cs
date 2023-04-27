@@ -6,12 +6,19 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
 {
     internal class CharacterModel : IEntity, IPlayer, IJobs, ISkills, ITraits, IStatuses
     {
+        public CharacterModel(string name = "Playc Holdr", string description = "He is but a modest Placeholder", string jobClass = "Placeholder", int age = 20)
+        {
+            Name = name;
+            Description = description;
+            JobClass = jobClass;
+            Age = age;
+        }
 
         // Description Variables
-        private string Name { set; get; } = "Playc Holdr";
-        private string Description { set; get; } = "that I am but a modest Placeholder";
-        private string JobClass { set; get; } = "Placeholder";
-        private int Age { set; get; } = 20;
+        private string Name { set; get; }
+        private string Description { set; get; }
+        private string JobClass { set; get; }
+        private int Age { set; get; }
 
         // Progression Variables
         private int Level { set; get; } = 1;

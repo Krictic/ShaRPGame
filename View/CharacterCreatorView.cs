@@ -13,7 +13,7 @@ namespace ShaRPGame.View
         public static void Menu()
         {
             MenuOptions();
-            string input = Gui.GetInputInt("");
+            string input = Gui.GetInputIntUpperCase("");
             CharacterCreationControl.ProcessInput(input);
         }
 

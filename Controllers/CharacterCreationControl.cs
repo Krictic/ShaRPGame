@@ -1,7 +1,5 @@
 ﻿using ShaRPG.View.GUI;
 using ShaRPGame.Model;
-using ShaRPGame.Model.Entities.PlayerCharacters;
-using ShaRPGame.Model.InstanceModels;
 using ShaRPGame.View;
 
 namespace ShaRPGame.Controllers
@@ -20,7 +18,17 @@ namespace ShaRPGame.Controllers
                 case "1":
                 case "C":
                     Console.Clear();
-                    CharacterCreatorModel.CreateCharacter();
+                    int age = 0;
+                    Console.WriteLine("Creating a new character.");
+                    string name = Gui.GetInputIntBasic("What´s the name of your character?");
+                    string description = Gui.GetInputIntBasic("Tell me something about your character?");
+                    string jobClass = Gui.GetInputIntBasic("What´s their class?");
+                    while (age <= 17 && age >= 70) // Is 70 yo too old for adventuring? Sorry, that was a strange thing to ask.
+                    {
+                        age = Convert.ToInt32(Gui.GetInputIntBasic("Finally tell me their age."));
+                        Gui.Alert("Sorry, the character cannot be underaged.");
+                    }
+                    CharacterCreatorModel.CreateCharacter(name, description, jobClass, age);
                     CharacterCreatorView.Menu();
                     break;
                 default:

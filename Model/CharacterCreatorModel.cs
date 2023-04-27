@@ -21,18 +21,17 @@ namespace ShaRPGame.Model
         {
             return new CharacterModel();
         }
-        public static void CreateCharacter()
+        public static void CreateCharacter(string name, string description, string jobClass, int age)
         {
-            Console.WriteLine("Creating a new character.");
-            CharacterModel character = new CharacterModel();
+            CharacterModel character = new CharacterModel(name, description, jobClass, age);
             Console.WriteLine($"The character {character.GetName()} has been created!");
             CharacterListModel charList = CharacterListModel.GetIntance();
             charList.AddToCharList(character);
 
-            foreach (CharacterModel item in charList.GetCharacterList())
-            {
-                Console.WriteLine(item.GetName());
-            }
+            //foreach (CharacterModel item in charList.GetCharacterList())
+            //{
+            //    Console.WriteLine(item.GetName());
+            //}
         }
 
     }

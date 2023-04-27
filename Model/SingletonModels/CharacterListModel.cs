@@ -37,5 +37,19 @@ namespace ShaRPGame.Model.InstanceModels
             }
             return _instance;
         }
+
+        public  int GetLength() 
+        {
+            if (_instance == null) 
+            {
+                int count = CharacterList.Count;
+                return count;
+            }
+
+            else
+            {
+                return 0;
+            }
+        }
     }
 }
