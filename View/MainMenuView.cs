@@ -20,7 +20,8 @@ namespace ShaRPGame.View
             CharacterModel activeCharacter = ActiveCharacterModel.GetIntance().GetActiveCharacter();
             if (activeCharacter != null)
             {
-                Gui.PrintLine($"Active Character: {activeCharacter.GetName()} | Job: {activeCharacter.GetJobClass()}");
+                //Gui.PrintLine($"Active Character: {activeCharacter.GetName()} | Job: {activeCharacter.GetJobClass()}");
+                Gui.CharacterBannerCreate(activeCharacter);
             }
             Gui.MenuTitle("Welcome to ShaRPGame!");
             Gui.MenuOption(1, "(N)ew game");

@@ -10,105 +10,139 @@ namespace ShaRPGame.Model.Entities.EntityInterfaces
     {
         // Descriptor Variables (fixed and unchangeable, can onyl be set at character creation)
 
-        // The entity´s name
-        string Name { set; get; }
-        // What this entity is
-        string Description { set; get; }
+        string GetName();
+        void SetName(string value);
 
+        string GetDescription();
+        void SetDescription(string value);
+
+        string GetJobClass();
+        void SetJobClass(string value);
+
+        int GetAge();
+        void SetAge(int value);
 
         // Progression Variables
-        string JobClass { set; get; }
-        int Age { set; get; }
-        int Level { set; get; }
-        int StatPoints { set; get; }
-        int SkillPoints { set; get; }
-        int TraitPoints { set; get; }
+        int GetLevel();
+        void SetLevel(int value);
+
+        int GetExpBase();
+        void SetExpBase(int value);
+
+        int GetExpRequirement();
+        void SetExpRequirement(int value);
+
+        int GetStatPoints();
+        void SetStatPoints(int value);
+
+        int GetSkillPoints();
+        void SetSkillPoints(int value);
+        int GetTraitPoints();
+        void SetTraitPoints(int value);
 
         // Primary Stat Variables (innate but can be improved)
 
         // General measure of physical prowess.
-        int Might { set; get; }
+        int GetMight();
+        void SetMight(int value);
+
         //  General measure of health
-        int Vitality { set; get; }
+        int GetVitality();
+        void SetVitality(int value);
+
         // General measure of how well one can move their own body.
-        int Agility { set; get; }
+        int GetAgility();
+        void SetAgility(int value);
+
         // General measure of one´s fine motor skills
-        int Dexterity { set; get; }
+        int GetDexterity();
+        void SetDexterity(int value);
+
         // General measure of mental acuity
-        int Intellect { set; get; }
+        int GetIntellect();
+        void SetIntellect(int value);
+
         // General measure of one´s magical potential, not inherently related to intellect
-        int Magic { set; get; }
+        int GetMagic();
+        void SetMagic(int value);
+
         // General measure of one´s social skills
-        int Charisma { set; get; }
+        int GetCharisma();
+        void SetCharisma(int value);
+
         // General measure of one´s psychological might. Used to resist suggestion, provocation, torture and son.
-        int Will { get; set; }
+        int GetWill();
+        void SetWill(int value);
+
         //  General measure of one´s awareness of their surroundings
-        int Perception { set; get; }
-
-
+        int GetPerception();
+        void SetPerception(int value);
 
         // Secondary Stat Variables
 
         // (Vitality + Might) * 2;
-        int HitPointCapacity { set; get; }
+        int GetHitPointCapacity();
+        void SetHitPointCapacity(int value);
 
         // Equal to HitPointCapacity at CharacterCreation.
-        int HitPoints { get; set; }
+        int GetHitPoints();
+        void SetHitPoints(int value);
 
-
-        // Might + Vitality) / 2 where every 5 points increase stamina by 1. Spent by every action, as it reaches zero
+        // (Might + Vitality) / 2 where every 5 points increase stamina by 1. Spent by every action, as it reaches zero
         // malus statuses will be applied, each worse than the last one.
         // If it reaches zero, then the character will be unable to act for 3 turns.
-
-        int StaminaCapacity { get; set; }
-
-        // The ability to convince someone to agree or do something you wish.
-        // (Charisma + Intellect + Will) / 3.
-        int Rethorics { set; get; }
+        int GetStaminaCapacity();
+        void SetStaminaCapacity(int value);
 
         // How fast your chaarcter can move, determined how many steps they can take every turn.
         // (Agility + Vitality) / 2.
-        int Speed { set; get; }
-
+        int GetSpeed();
+        void SetSpeed(int value);
 
         // Tertiary Stat Variables (derived from secondary stats)
-
         // Ability to hit (or not) specific parts of the target. For example, if you want to shoot specifically the eyes of the target.
-        // (Dexterity + Precission)
-        double RangedPrecision { set; get; }
+        // (Dexterity + Perception)
+        double GetRangedPrecision();
+        void SetRangedPrecision(double value);
 
         // Ability to hit a target at melee, for example, it is required to hit at armor gaps in the absense non-blunt weapons.
-        double MeleePrecision { set; get; }
+        double GetMeleePrecision();
+        void SetMeleePrecision(double value);
 
         // Ability to consistently not miss targets at range.
-        double Accuracy { set; get; }
+        double GetAccuracy();
+        void SetAccuracy(double value);
 
-        // A n-sided dice, n = (Might + Dexterity + Precision) / 3. Every 9 points increasses it by 2.
-        int MeleeDamage { set; get; }
+        // A n-sided dice, n = (Might + Dexterity + MeleePrecision) / 3. Every 9 points increasses it by 2.
+        int GetMeleeDamage();
+        void SetMeleeDamage(int value);
 
         // A n-sided dice, n = {Dexterity + Perception + Accuracy} / 3. Every 9 points increases it by 2.
-        int RangedDamage { set; get; }
+        int GetRangedDamage();
+        void SetRangedDamage(int value);
+
+        // The ability to convince someone to agree or do something you wish.
+        // (Charisma + Intellect + Will) / 3.
+        int GetRethorics();
+        void SetRethorics(int value);
 
         // Stat Calculation Methods
 
-        void CalculateStats(); // This will call all stat calculation methods and unify them.
-        int MaxHitPointCalc();
-        int DamageModCalc();
-        int BasicDamageCalc();
-        int StaminaCapacityCalc();
-        int rethorics();
-        int SpeedCalc();
-        int RangedDamageCalc();
-        int MeleeDamageCaclc();
-        double RangedPrecisionCalc();
-        double MeleePrecisionCalc();
-        int PerceptionCalc();
-        double AccuracyCalc();
+        void CalculateStats(int Level); // This will call all stat calculation methods and unify them.
+        void StatPointsCalc(int Level);
+        void SkillPointsCalc(int Level, int Intellect);
+        void TraitPointsCalc(int Level);
+        void HitPointCapacityCalc(int Vitality, int Might);
+        void HitPointsCalc(int HitPointCapacity);
+        void StaminaCapacityCalc(int Might, int Vitality);
+        void rethoricsCalc(int Charisma, int Intellect, int Will);
+        void SpeedCalc(int Agility, int Vitality);
+        void RangedDamageCalc(int Dexterity, int Perception, int Accuracy);
+        void MeleeDamageCaclc(int Might, int Dexterity, int MeleePrecision);
+        void RangedPrecisionCalc(int Dexterity, int Perception);
+        void MeleePrecisionCalc(int Dexterity, int Perception, int Might);
+        void AccuracyCalc(int Perception);
 
         // Action methods
-        string attack();
-        string defend();
-        string speak();
-        string move();
     }
 }
