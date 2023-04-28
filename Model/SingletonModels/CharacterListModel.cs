@@ -11,17 +11,17 @@ namespace ShaRPGame.Model.InstanceModels
             InitCharacterList();
         }
 
-        public ArrayList CharacterList { get; set; }
+        public List<CharacterModel> CharacterList { get; set; }
         private static CharacterListModel _instance { get; set; }
 
-        public ArrayList GetCharacterList()
+        public List<CharacterModel> GetCharacterList()
         {
             return CharacterList;
         }
 
         public void InitCharacterList()
         {
-            CharacterList = new ArrayList();
+            CharacterList = new List<CharacterModel>();
         }
 
         public void AddToCharList(CharacterModel character)
@@ -40,7 +40,7 @@ namespace ShaRPGame.Model.InstanceModels
 
         public  int GetLength() 
         {
-            if (_instance == null) 
+            if (_instance != null) 
             {
                 int count = CharacterList.Count;
                 return count;

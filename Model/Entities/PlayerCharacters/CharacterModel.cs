@@ -22,7 +22,7 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
 
         // Progression Variables
         private int Level { set; get; } = 1;
-        private int ExpBase { set; get; }
+        private int ExpBase { set; get; } = 50;
         private int ExpRequirement { set; get; } = 100;
         private int StatPoints { get; set; }
         private int SkillPoints { get; set; }

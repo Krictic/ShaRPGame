@@ -81,7 +81,7 @@ namespace ShaRPG.View.GUI
 
 
 
-        public static void GetInput(string str)
+        public static void GetInput(object str)
         {
             str = string.Format("{0} -> ", str);
             Console.Write(str);
@@ -114,7 +114,7 @@ namespace ShaRPG.View.GUI
             return input;
         }
 
-        public static string GetInputIntBasic(string message)
+        public static string GetInputIntBasic(object message)
         {
             string? input = null;
 
@@ -163,8 +163,17 @@ namespace ShaRPG.View.GUI
 
         public static string ToStringBanner(CharacterModel character)
         {
+            int percentile;
+            if (character.GetExpBase() == 0)
+            {
+                percentile = 0;
+            }
+            else
+            {
+                percentile = (character.GetExpRequirement() / character.GetExpBase()) * 100;
+            }
             string str =
-                $"[ {character.GetName()} | Lv: {character.GetLevel()} | Job: {character.GetJobClass()} | Exp: {character.GetExpBase()} / {character.GetExpRequirement()} ]";
+                $"[ {character.GetName()} | Lv: {character.GetLevel()} | Job: {character.GetJobClass()} | Exp: {character.GetExpBase()} / {character.GetExpRequirement()} ({percentile}%)]";
 
             return str;
         }
