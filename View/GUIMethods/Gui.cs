@@ -163,14 +163,14 @@ namespace ShaRPG.View.GUI
 
         public static string ToStringBanner(CharacterModel character)
         {
-            int percentile;
+            double percentile;
             if (character.GetExpBase() == 0)
             {
                 percentile = 0;
             }
             else
             {
-                percentile = (character.GetExpRequirement() / character.GetExpBase()) * 100;
+                percentile = ((double)character.GetExpBase() / (double)character.GetExpRequirement()) * 100;
             }
             string str =
                 $"[ {character.GetName()} | Lv: {character.GetLevel()} | Job: {character.GetJobClass()} | Exp: {character.GetExpBase()} / {character.GetExpRequirement()} ({percentile}%)]";
