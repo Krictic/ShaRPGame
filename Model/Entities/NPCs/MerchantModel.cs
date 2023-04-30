@@ -1,11 +1,11 @@
 ﻿using ShaRPG.View.GUI;
 using ShaRPGame.Model.Entities.EntityInterfaces;
 
-namespace ShaRPGame.Model.Entities.Creatures
+namespace ShaRPGame.Model.Entities.NPCs
 {
-    internal class RatModel : ICreature, IEntity
+    internal class MerchantModel : IEntity, INPCs
     {
-        public RatModel(
+        public MerchantModel(
             string name = "Playc Holdr",
             string description = "He is but a modest Placeholder",
             string jobClass = "Placeholder",
