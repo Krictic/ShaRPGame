@@ -25,6 +25,11 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         private string Description { set; get; }
         private string JobClass { set; get; }
         private int Age { set; get; }
+        private int Reputation { set; get; }
+
+        // Misc Variables
+        private bool isReincarnated { get; set; }
+        private int deathCount { set; get; }
 
         // Progression Variables
         private int Level { set; get; } = 1;
@@ -97,6 +102,36 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         public void SetAge(int value)
         {
             this.Age = value;
+        }
+
+        public int GetReputation()
+        {
+            return this.Reputation;
+        }
+
+        public void SetReputation(int value)
+        {
+            this.Reputation = value;
+        }
+
+        public bool GetIsReincarnated()
+        {
+            return this.isReincarnated;
+        }
+
+        public void SetIsReincarnated(bool value)
+        {
+            this.isReincarnated = value;
+        }
+
+        public int GetDeathCount()
+        {
+            return this.deathCount;
+        }
+
+        public void SetDeathCount(int value)
+        {
+            this.deathCount = value;
         }
 
         public int GetLevel()
@@ -480,15 +515,18 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         public void ToStringComplete()
         {
             Gui.PrintLine(
-                $"Name: {this.Name}\n"
+                      $"============ Information ============\n"
+                    + $"Name: {this.Name}\n"
                     + $"Description {this.Description}\n"
-                    + $"JobClass {this.JobClass}\n"
-                    + $"Age: {this.Age}\n"
-                    + $"Level {this.Level}\n"
+                    + $"Job: {this.JobClass}\n"
+                    + $"============ Progression ============\n"
+                    + $"Age: {Age}\n"
+                    + $"Level {Level}\n"
                     + $"Exp: {this.ExpBase} / {this.ExpRequirement}\n"
                     + $"Stat Points {this.StatPoints}\n"
                     + $"Trait Points: {this.StatPoints}\n"
                     + $"Skill Points {this.SkillPoints}\n"
+                    + $"============ Core Stats =============\n"
                     + $"Might: {this.Might}\n"
                     + $"Vitality: {this.Vitality}\n"
                     + $"Agility: {this.Agility}\n"
@@ -498,6 +536,7 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
                     + $"Charisma: {this.Charisma}\n"
                     + $"Will: {this.Will}\n"
                     + $"Perception: {this.Perception}\n"
+                    + $"============ Derived Stats ==========\n"
                     + $"HitPoints {this.HitPoints} / {this.HitPointCapacity}\n"
                     + $"Stamina Capacity: {this.StaminaCapacity}\n"
                     + $"Speed: {this.Speed}\n"
@@ -507,6 +546,7 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
                     + $"Melee Precision: {this.MeleePrecision}\n"
                     + $"Ranged Precision: {this.RangedPrecision}"
             );
+
         }
     }
 }

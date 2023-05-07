@@ -23,6 +23,7 @@ namespace ShaRPGame.Model.Entities.Creatures
         private string Description { set; get; }
         private string JobClass { set; get; }
         private int Age { set; get; }
+        private int Reputation { set; get; }
 
         // Progression Variables
         private int Level { set; get; } = 1;
@@ -95,6 +96,16 @@ namespace ShaRPGame.Model.Entities.Creatures
         public void SetAge(int value)
         {
             this.Age = value;
+        }
+
+        public int GetReputation()
+        {
+            return this.Reputation;
+        }
+
+        public void SetReputation(int value)
+        {
+            this.Reputation = value;
         }
 
         public int GetLevel()

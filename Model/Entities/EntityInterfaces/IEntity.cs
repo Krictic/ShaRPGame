@@ -22,6 +22,9 @@ namespace ShaRPGame.Model.Entities.EntityInterfaces
         int GetAge();
         void SetAge(int value);
 
+        int GetReputation();
+        void SetReputation(int value);
+
         // Progression Variables
         int GetLevel();
         void SetLevel(int value);
@@ -125,7 +128,5 @@ namespace ShaRPGame.Model.Entities.EntityInterfaces
         void RangedPrecisionCalc(int Dexterity, int Perception);
         void MeleePrecisionCalc(int Dexterity, int Perception, int Might);
         void AccuracyCalc(int Perception);
-
-        // Action methods
     }
 }

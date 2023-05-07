@@ -19,7 +19,7 @@ namespace ShaRPGame.View
 
         public static void MenuOptions()
         {
-            Gui.MenuTitle("Welcome to CharacterModel Creator!");
+            Gui.MenuTitle("Welcome to the Character Creator!");
             Gui.MenuOption(1, "(C)reate a New Character");
             Gui.MenuOption(2, "(E)dit a Character");
             Gui.MenuOption(3, "(D)elete Character");
