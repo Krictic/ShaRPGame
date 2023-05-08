@@ -1,6 +1,4 @@
-﻿using ShaRPGame.Model.Entities.PlayerCharacters;
-
-namespace ShaRPGame.Model
+﻿namespace ShaRPGame.Model
 {
     internal class MainMenuModel
     {
