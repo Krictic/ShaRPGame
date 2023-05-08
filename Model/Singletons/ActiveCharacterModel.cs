@@ -1,4 +1,4 @@
-﻿using ShaRPGame.Model.Entities.PlayerCharacters;
+﻿using ShaRPGame.Model.Entities.Models.PlayerCharacters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

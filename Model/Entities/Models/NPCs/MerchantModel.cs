@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Dynamic;
-using ShaRPG.View.GUI;
+﻿using ShaRPG.View.GUI;
 using ShaRPGame.Model.Entities.EntityInterfaces;
 
-namespace ShaRPGame.Model.Entities.PlayerCharacters
+namespace ShaRPGame.Model.Entities.Models.NPCs
 {
-    internal class CharacterModel : IEntity, IPlayer
+    internal class MerchantModel : IEntity, INPCs
     {
-        public CharacterModel(
+        public MerchantModel(
             string name = "Playc Holdr",
             string description = "He is but a modest Placeholder",
             string jobClass = "Placeholder",
@@ -26,10 +24,6 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         private string JobClass { set; get; }
         private int Age { set; get; }
         private int Reputation { set; get; }
-
-        // Misc Variables
-        private bool isReincarnated { get; set; }
-        private int deathCount { set; get; }
 
         // Progression Variables
         private int Level { set; get; } = 1;
@@ -66,322 +60,302 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
 
         public string GetName()
         {
-            return this.Name;
+            return Name;
         }
 
         public void SetName(string value)
         {
-            this.Name = value;
+            Name = value;
         }
 
         public string GetDescription()
         {
-            return this.Description;
+            return Description;
         }
 
         public void SetDescription(string value)
         {
-            this.Description = value;
+            Description = value;
         }
 
         public string GetJobClass()
         {
-            return this.JobClass;
+            return JobClass;
         }
 
         public void SetJobClass(string value)
         {
-            this.JobClass = value;
+            JobClass = value;
         }
 
         public int GetAge()
         {
-            return this.Age;
+            return Age;
         }
 
         public void SetAge(int value)
         {
-            this.Age = value;
+            Age = value;
         }
 
         public int GetReputation()
         {
-            return this.Reputation;
+            return Reputation;
         }
 
         public void SetReputation(int value)
         {
-            this.Reputation = value;
-        }
-
-        public bool GetIsReincarnated()
-        {
-            return this.isReincarnated;
-        }
-
-        public void SetIsReincarnated(bool value)
-        {
-            this.isReincarnated = value;
-        }
-
-        public int GetDeathCount()
-        {
-            return this.deathCount;
-        }
-
-        public void SetDeathCount(int value)
-        {
-            this.deathCount = value;
+            Reputation = value;
         }
 
         public int GetLevel()
         {
-            return this.Level;
+            return Level;
         }
 
         public void SetLevel(int value)
         {
-            this.Level = value;
+            Level = value;
         }
 
         public int GetExpBase()
         {
-            return this.ExpBase;
+            return ExpBase;
         }
 
         public void SetExpBase(int value)
         {
-            this.ExpBase = value;
+            ExpBase = value;
         }
 
         public int GetExpRequirement()
         {
-            return this.ExpRequirement;
+            return ExpRequirement;
         }
 
         public void SetExpRequirement(int value)
         {
-            this.ExpRequirement = value;
+            ExpRequirement = value;
         }
 
         public int GetStatPoints()
         {
-            return this.StatPoints;
+            return StatPoints;
         }
 
         public void SetStatPoints(int value)
         {
-            this.StatPoints = value;
+            StatPoints = value;
         }
 
         public int GetSkillPoints()
         {
-            return this.SkillPoints;
+            return SkillPoints;
         }
 
         public void SetSkillPoints(int value)
         {
-            this.SkillPoints = value;
+            SkillPoints = value;
         }
 
         public int GetTraitPoints()
         {
-            return this.TraitPoints;
+            return TraitPoints;
         }
 
         public void SetTraitPoints(int value)
         {
-            this.TraitPoints = value;
+            TraitPoints = value;
         }
 
         public int GetMight()
         {
-            return this.Might;
+            return Might;
         }
 
         public void SetMight(int value)
         {
-            this.Might = value;
+            Might = value;
         }
 
         public int GetVitality()
         {
-            return this.Vitality;
+            return Vitality;
         }
 
         public void SetVitality(int value)
         {
-            this.Vitality = value;
+            Vitality = value;
         }
 
         public int GetAgility()
         {
-            return this.Agility;
+            return Agility;
         }
 
         public void SetAgility(int value)
         {
-            this.Agility = value;
+            Agility = value;
         }
 
         public int GetDexterity()
         {
-            return this.Dexterity;
+            return Dexterity;
         }
 
         public void SetDexterity(int value)
         {
-            this.Dexterity = value;
+            Dexterity = value;
         }
 
         public int GetIntellect()
         {
-            return this.Intellect;
+            return Intellect;
         }
 
         public void SetIntellect(int value)
         {
-            this.Intellect = value;
+            Intellect = value;
         }
 
         public int GetMagic()
         {
-            return this.Magic;
+            return Magic;
         }
 
         public void SetMagic(int value)
         {
-            this.Magic = value;
+            Magic = value;
         }
 
         public int GetCharisma()
         {
-            return this.Charisma;
+            return Charisma;
         }
 
         public void SetCharisma(int value)
         {
-            this.Charisma = value;
+            Charisma = value;
         }
 
         public int GetWill()
         {
-            return this.Will;
+            return Will;
         }
 
         public void SetWill(int value)
         {
-            this.Will = value;
+            Will = value;
         }
 
         public int GetPerception()
         {
-            return this.Perception;
+            return Perception;
         }
 
         public void SetPerception(int value)
         {
-            this.Perception = value;
+            Perception = value;
         }
 
         public int GetHitPointCapacity()
         {
-            return this.HitPointCapacity;
+            return HitPointCapacity;
         }
 
         public void SetHitPointCapacity(int value)
         {
-            this.HitPointCapacity = value;
+            HitPointCapacity = value;
         }
 
         public int GetHitPoints()
         {
-            return this.HitPoints;
+            return HitPoints;
         }
 
         public void SetHitPoints(int value)
         {
-            this.HitPoints = value;
+            HitPoints = value;
         }
 
         public int GetStaminaCapacity()
         {
-            return this.StaminaCapacity;
+            return StaminaCapacity;
         }
 
         public void SetStaminaCapacity(int value)
         {
-            this.StaminaCapacity = value;
+            StaminaCapacity = value;
         }
 
         public int GetRethorics()
         {
-            return this.Rethorics;
+            return Rethorics;
         }
 
         public void SetRethorics(int value)
         {
-            this.Rethorics = value;
+            Rethorics = value;
         }
 
         public int GetSpeed()
         {
-            return this.Speed;
+            return Speed;
         }
 
         public void SetSpeed(int value)
         {
-            this.Speed = value;
+            Speed = value;
         }
 
         public double GetRangedPrecision()
         {
-            return this.RangedPrecision;
+            return RangedPrecision;
         }
 
         public void SetRangedPrecision(double value)
         {
-            this.RangedPrecision = value;
+            RangedPrecision = value;
         }
 
         public double GetMeleePrecision()
         {
-            return this.MeleePrecision;
+            return MeleePrecision;
         }
 
         public void SetMeleePrecision(double value)
         {
-            this.MeleePrecision = value;
+            MeleePrecision = value;
         }
 
         public double GetAccuracy()
         {
-            return this.Accuracy;
+            return Accuracy;
         }
 
         public void SetAccuracy(double value)
         {
-            this.Accuracy = value;
+            Accuracy = value;
         }
 
         public int GetMeleeDamage()
         {
-            return this.MeleeDamage;
+            return MeleeDamage;
         }
 
         public void SetMeleeDamage(int value)
         {
-            this.MeleeDamage = value;
+            MeleeDamage = value;
         }
 
         public int GetRangedDamage()
         {
-            return this.RangedDamage;
+            return RangedDamage;
         }
 
         public void SetRangedDamage(int value)
         {
-            this.RangedDamage = value;
+            RangedDamage = value;
         }
 
         // Calculation Methods
@@ -389,21 +363,21 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         {
             SetLevel(Level);
             StatPointsCalc(Level);
-            SkillPointsCalc(Level, this.Intellect);
+            SkillPointsCalc(Level, Intellect);
             TraitPointsCalc(Level);
-            HitPointCapacityCalc(this.Vitality, this.Might);
-            HitPointsCalc(this.HitPointCapacity);
-            StaminaCapacityCalc(this.Might, this.Vitality);
-            RethoricsCalc(this.Charisma, this.Intellect, this.Will);
-            SpeedCalc(this.Agility, this.Vitality);
-            MeleePrecisionCalc(this.Dexterity, this.Perception, this.Might);
-            int AccMod = AccuracyModCalc(this.Accuracy);
-            int MeleePrecisionMod = MeleePrecisionModCalc(this.MeleePrecision);
-            RangedDamageCalc(this.Dexterity, this.Perception, AccMod);
-            MeleeDamageCalc(this.Might, this.Dexterity, MeleePrecisionMod);
+            HitPointCapacityCalc(Vitality, Might);
+            HitPointsCalc(HitPointCapacity);
+            StaminaCapacityCalc(Might, Vitality);
+            RethoricsCalc(Charisma, Intellect, Will);
+            SpeedCalc(Agility, Vitality);
+            MeleePrecisionCalc(Dexterity, Perception, Might);
+            int AccMod = AccuracyModCalc(Accuracy);
+            int MeleePrecisionMod = MeleePrecisionModCalc(MeleePrecision);
+            RangedDamageCalc(Dexterity, Perception, AccMod);
+            MeleeDamageCalc(Might, Dexterity, MeleePrecisionMod);
 
-            RangedPrecisionCalc(this.Dexterity, this.Perception);
-            AccuracyCalc(this.Perception);
+            RangedPrecisionCalc(Dexterity, Perception);
+            AccuracyCalc(Perception);
         }
 
         public void StatPointsCalc(int Level)
@@ -415,11 +389,11 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         {
             if (Level % 5 != 0 && Intellect % 2 == 0)
             {
-                SetSkillPoints(Level + (Intellect / 2));
+                SetSkillPoints(Level + Intellect / 2);
             }
             else if (Level % 5 != 0 && Intellect % 3 == 0)
             {
-                SetSkillPoints(Level + (Intellect / 3));
+                SetSkillPoints(Level + Intellect / 3);
             }
             SetSkillPoints(Level);
         }
@@ -507,7 +481,7 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
 
         public void AccuracyCalc(int Perception)
         {
-            SetAccuracy((Perception));
+            SetAccuracy(Perception);
         }
 
         // Stats Display Methods
@@ -515,38 +489,33 @@ namespace ShaRPGame.Model.Entities.PlayerCharacters
         public void ToStringComplete()
         {
             Gui.PrintLine(
-                      $"============ Information ============\n"
-                    + $"Name: {this.Name}\n"
-                    + $"Description {this.Description}\n"
-                    + $"Job: {this.JobClass}\n"
-                    + $"============ Progression ============\n"
+                $"Name: {Name}\n"
+                    + $"Description {Description}\n"
+                    + $"JobClass {JobClass}\n"
                     + $"Age: {Age}\n"
                     + $"Level {Level}\n"
-                    + $"Exp: {this.ExpBase} / {this.ExpRequirement}\n"
-                    + $"Stat Points {this.StatPoints}\n"
-                    + $"Trait Points: {this.StatPoints}\n"
-                    + $"Skill Points {this.SkillPoints}\n"
-                    + $"============ Core Stats =============\n"
-                    + $"Might: {this.Might}\n"
-                    + $"Vitality: {this.Vitality}\n"
-                    + $"Agility: {this.Agility}\n"
-                    + $"Dexterity: {this.Dexterity}\n"
-                    + $"Intellect: {this.Intellect}\n"
-                    + $"Magic: {this.Magic}\n"
-                    + $"Charisma: {this.Charisma}\n"
-                    + $"Will: {this.Will}\n"
-                    + $"Perception: {this.Perception}\n"
-                    + $"============ Derived Stats ==========\n"
-                    + $"HitPoints {this.HitPoints} / {this.HitPointCapacity}\n"
-                    + $"Stamina Capacity: {this.StaminaCapacity}\n"
-                    + $"Speed: {this.Speed}\n"
-                    + $"Accuracy: {this.Accuracy}\n"
-                    + $"Melee Damage: {this.MeleeDamage}\n"
-                    + $"Ranged Damage: {this.RangedDamage}\n"
-                    + $"Melee Precision: {this.MeleePrecision}\n"
-                    + $"Ranged Precision: {this.RangedPrecision}"
+                    + $"Exp: {ExpBase} / {ExpRequirement}\n"
+                    + $"Stat Points {StatPoints}\n"
+                    + $"Trait Points: {StatPoints}\n"
+                    + $"Skill Points {SkillPoints}\n"
+                    + $"Might: {Might}\n"
+                    + $"Vitality: {Vitality}\n"
+                    + $"Agility: {Agility}\n"
+                    + $"Dexterity: {Dexterity}\n"
+                    + $"Intellect: {Intellect}\n"
+                    + $"Magic: {Magic}\n"
+                    + $"Charisma: {Charisma}\n"
+                    + $"Will: {Will}\n"
+                    + $"Perception: {Perception}\n"
+                    + $"HitPoints {HitPoints} / {HitPointCapacity}\n"
+                    + $"Stamina Capacity: {StaminaCapacity}\n"
+                    + $"Speed: {Speed}\n"
+                    + $"Accuracy: {Accuracy}\n"
+                    + $"Melee Damage: {MeleeDamage}\n"
+                    + $"Ranged Damage: {RangedDamage}\n"
+                    + $"Melee Precision: {MeleePrecision}\n"
+                    + $"Ranged Precision: {RangedPrecision}"
             );
-
         }
     }
 }

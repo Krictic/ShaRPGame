@@ -1,11 +1,13 @@
-﻿using ShaRPG.View.GUI;
+﻿using System.Collections;
+using System.Dynamic;
+using ShaRPG.View.GUI;
 using ShaRPGame.Model.Entities.EntityInterfaces;
 
-namespace ShaRPGame.Model.Entities.NPCs
+namespace ShaRPGame.Model.Entities.Models.PlayerCharacters
 {
-    internal class MerchantModel : IEntity, INPCs
+    internal class CharacterModel : IEntity, IPlayer
     {
-        public MerchantModel(
+        public CharacterModel(
             string name = "Playc Holdr",
             string description = "He is but a modest Placeholder",
             string jobClass = "Placeholder",
@@ -24,6 +26,10 @@ namespace ShaRPGame.Model.Entities.NPCs
         private string JobClass { set; get; }
         private int Age { set; get; }
         private int Reputation { set; get; }
+
+        // Misc Variables
+        private bool isReincarnated { get; set; }
+        private int deathCount { set; get; }
 
         // Progression Variables
         private int Level { set; get; } = 1;
@@ -100,12 +106,32 @@ namespace ShaRPGame.Model.Entities.NPCs
 
         public int GetReputation()
         {
-            return this.Reputation;
+            return Reputation;
         }
 
         public void SetReputation(int value)
         {
-            this.Reputation = value;
+            Reputation = value;
+        }
+
+        public bool GetIsReincarnated()
+        {
+            return isReincarnated;
+        }
+
+        public void SetIsReincarnated(bool value)
+        {
+            isReincarnated = value;
+        }
+
+        public int GetDeathCount()
+        {
+            return deathCount;
+        }
+
+        public void SetDeathCount(int value)
+        {
+            deathCount = value;
         }
 
         public int GetLevel()
@@ -489,15 +515,18 @@ namespace ShaRPGame.Model.Entities.NPCs
         public void ToStringComplete()
         {
             Gui.PrintLine(
-                $"Name: {Name}\n"
+                      $"============ Information ============\n"
+                    + $"Name: {Name}\n"
                     + $"Description {Description}\n"
-                    + $"JobClass {JobClass}\n"
+                    + $"Job: {JobClass}\n"
+                    + $"============ Progression ============\n"
                     + $"Age: {Age}\n"
                     + $"Level {Level}\n"
                     + $"Exp: {ExpBase} / {ExpRequirement}\n"
                     + $"Stat Points {StatPoints}\n"
                     + $"Trait Points: {StatPoints}\n"
                     + $"Skill Points {SkillPoints}\n"
+                    + $"============ Core Stats =============\n"
                     + $"Might: {Might}\n"
                     + $"Vitality: {Vitality}\n"
                     + $"Agility: {Agility}\n"
@@ -507,6 +536,7 @@ namespace ShaRPGame.Model.Entities.NPCs
                     + $"Charisma: {Charisma}\n"
                     + $"Will: {Will}\n"
                     + $"Perception: {Perception}\n"
+                    + $"============ Derived Stats ==========\n"
                     + $"HitPoints {HitPoints} / {HitPointCapacity}\n"
                     + $"Stamina Capacity: {StaminaCapacity}\n"
                     + $"Speed: {Speed}\n"
@@ -516,6 +546,7 @@ namespace ShaRPGame.Model.Entities.NPCs
                     + $"Melee Precision: {MeleePrecision}\n"
                     + $"Ranged Precision: {RangedPrecision}"
             );
+
         }
     }
 }

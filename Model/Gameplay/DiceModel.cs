@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShaRPGame.Model.GameplayModels
 {
-    internal class Dices
+    internal class DiceModel
     {
         // Will "roll" a n-sided dice
         public static int RollDice(int size)

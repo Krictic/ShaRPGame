@@ -1,4 +1,4 @@
-﻿using ShaRPGame.Model.Entities.PlayerCharacters;
+﻿using ShaRPGame.Model.Entities.Models.PlayerCharacters;
 
 namespace ShaRPG.View.GUI
 {

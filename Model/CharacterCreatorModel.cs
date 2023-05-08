@@ -1,5 +1,5 @@
 ﻿using ShaRPG.View.GUI;
-using ShaRPGame.Model.Entities.PlayerCharacters;
+using ShaRPGame.Model.Entities.Models.PlayerCharacters;
 using ShaRPGame.Model.InstanceModels;
 using System;
 using System.Collections;

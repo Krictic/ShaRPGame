@@ -1,6 +1,6 @@
 ﻿using ShaRPG.View.GUI;
 using ShaRPGame.Controllers;
-using ShaRPGame.Model.Entities.PlayerCharacters;
+using ShaRPGame.Model.Entities.Models.PlayerCharacters;
 using ShaRPGame.Model.InstanceModels;
 
 namespace ShaRPGame.View

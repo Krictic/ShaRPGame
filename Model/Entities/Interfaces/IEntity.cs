@@ -8,7 +8,7 @@ namespace ShaRPGame.Model.Entities.EntityInterfaces
 {
     internal interface IEntity
     {
-        // Descriptor Variables (fixed and unchangeable, can onyl be set at character creation)
+        // Descriptor Variables (fixed and unchangeable, can only be set at character creation)
 
         string GetName();
         void SetName(string value);
