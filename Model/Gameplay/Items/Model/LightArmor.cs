@@ -13,9 +13,9 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
 {
     internal class LightArmor : IItem, IEquipment, IArmor
     {
-        private string? ItemName;
-        private string? ItemDescription;
-        private string? ItemType;
+        private string ItemName = "Placeholder Name";
+        private string ItemDescription = "Placeholder Descriptions";
+        private string ItemType = "Placeholder Type";
         private int ItemValue;
         private double Itemweight;
         private int ItemRarity;
@@ -126,7 +126,10 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
         {
             string block = String.Format("{0:0.00}", this.Block);
             string resist = String.Format("{0:0.00}", this.Resist);
-            Gui.PrintLine($"Block: {block}\n" +
+            Gui.PrintLine($"Name: {this.ItemName}\n" +
+                          $"Item Description: {this.ItemDescription}\n" +
+                          $"Type: {this.ItemType}\n"+
+                          $"Block: {block}\n" +
                           $"Resist: {resist}");
         }
 
