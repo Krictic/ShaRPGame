@@ -8,7 +8,7 @@ namespace ShaRPGame.Controllers
 {
     internal class CharacterSelectorController
     {
-        // Bug here: if the player types an index out of bounds, then the game crashes, gotta find a way fo solving this.
+        // Todo: make
         public static void ListProcessing()
         {
             int input = 0;
@@ -28,7 +28,6 @@ namespace ShaRPGame.Controllers
             catch (Exception ex)
             {
                 Gui.Alert(ex.Message);
-                input = 0;
                 ListProcessing();
             }
             

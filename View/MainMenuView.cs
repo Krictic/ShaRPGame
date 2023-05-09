@@ -35,7 +35,7 @@ namespace ShaRPGame.View
             Gui.MenuOption(5, "(V)iew and Select Characters");
             Gui.MenuOption(6, "(O)ptions");
             Gui.MenuOption(-1, "(E)xit");
-            Gui.MenuOption(-2, "(D)ebug Mode");
+                Gui.MenuOption(-2, "(D)ebug Menu");
         }
     }
 }

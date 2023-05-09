@@ -25,7 +25,7 @@ namespace ShaRPGame.Controllers
                 case "-2":
                 case "D":
                     Console.Clear();
-                    Gui.Alert("Not implemented yet!");
+                    DebugMenuView.Menu();
                     break;
                 case "1":
                 case "N":
