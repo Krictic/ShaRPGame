@@ -23,6 +23,10 @@ namespace ShaRPGame.View
                 //Gui.PrintLine($"Active Character: {activeCharacter.GetName()} | Job: {activeCharacter.GetJobClass()}");
                 Gui.CharacterBannerCreate(activeCharacter);
             }
+            else
+            {
+                Gui.PrintLine("No Active Character");
+            }
             Gui.MenuTitle("Welcome to ShaRPGame!");
             Gui.MenuOption(1, "(N)ew game");
             Gui.MenuOption(2, "(L)oad Game");

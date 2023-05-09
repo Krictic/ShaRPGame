@@ -15,10 +15,9 @@ namespace ShaRPGame.Controllers
             CharacterListModel CharaList = CharacterSelectorModel.ListAll();
             Console.WriteLine("Please, select the index of the character you wish to select to activate it.");
             
-
             try
             {
-                Convert.ToInt32(Gui.GetInputIntBasic(input).Trim());
+                input = Convert.ToInt32(Gui.GetInputIntBasic(input).Trim());
                 CharacterModel character = CharaList.GetCharacterList()[input];
                 CharacterSelectorModel.ActivateCharacter(character);
                 ActiveCharacterModel activeCharacterInstance = ActiveCharacterModel.GetIntance();
