@@ -10,7 +10,5 @@ namespace ShaRPGame.Model.Gameplay.Items.Interfaces
     {
         int Getdurability();
         void Setdurability(int value);
-        int GetRarity();
-        void SetRarity(int value);
     }
 }

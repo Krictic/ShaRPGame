@@ -24,8 +24,8 @@ namespace ShaRPGame.Model.GameplayModels.Items.ItemInterfaces
         double GetItemWeight();
         void SetItemWeight(double value);
 
-        double GetItemRarity();
-        void SetItemRarity(double value);
+        int GetItemRarity();
+        void SetItemRarity(int value);
 
         public int StatBonus(CharacterModel character);
     }
