@@ -23,7 +23,7 @@ namespace ShaRPGame.Controllers
                     string name = Gui.GetInputIntBasic("What´s the name of your character?");
                     string description = Gui.GetInputIntBasic("Tell me something about your character?");
                     string jobClass = Gui.GetInputIntBasic("What´s their class?");
-                    while (age <= 17 && age >= 70) // Is 70 yo too old for adventuring? Sorry, that was a strange thing to ask.
+                    while (age <= 17 | age >= 70) // Is 70 yo too old for adventuring? Sorry, that was a strange thing to ask.
                     {
                         age = Convert.ToInt32(Gui.GetInputIntBasic("Finally tell me their age."));
                         Gui.Alert("Sorry, the character cannot be underaged.");
