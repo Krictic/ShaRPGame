@@ -18,8 +18,8 @@ namespace ShaRPGame.Model.GameplayModels.Items.ItemInterfaces
         string GetItemType();
         void SetItemType(string value);
 
-        int GetItemValue();
-        void SetItemValue(int value);
+        double GetItemValue();
+        void SetItemValue(double value);
 
         double GetItemWeight();
         void SetItemWeight(double value);

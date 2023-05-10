@@ -13,11 +13,20 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
 {
     internal class LightArmor : IItem, IEquipment, IArmor
     {
-        private string ItemName = "Placeholder Name";
-        private string ItemDescription = "Placeholder Descriptions";
-        private string ItemType = "Placeholder Type";
-        private int ItemValue;
-        private double Itemweight;
+
+        public LightArmor()
+        {
+            SetItemName("Placeholder Name");
+            SetItemDescription("Placeholder Descriptions");
+            SetItemType("Placeholder Type");
+            Setdurability(100);
+        }
+
+        private string ItemName;
+        private string ItemDescription;
+        private string ItemType;
+        private double ItemValue;
+        private double ItemWeight;
         private int ItemRarity;
         private int Durability;
         private double Resist;
@@ -53,24 +62,24 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
             this.ItemType = value;
         }
 
-        public int GetItemValue()
+        public double GetItemValue()
         {
             return this.ItemValue;
         }
 
-        public void SetItemValue(int value)
+        public void SetItemValue(double value)
         {
             this.ItemValue = value;
         }
 
         public double GetItemWeight()
         {
-            return this.Itemweight;
+            return this.ItemWeight;
         }
 
         public void SetItemWeight(double value)
         {
-            this.Itemweight = value;
+            this.ItemWeight = value;
         }
 
         public int GetItemRarity()
@@ -113,12 +122,15 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
             this.Durability = value;
         }
 
-        public void GenerateRandom(double resist, double block)
+        public void GenerateRandom(double resist, double block, double itemValue, double itemWeight, int rarity)
         {
             Random rng = new Random();
 
             SetResist(rng.NextDouble() * resist);
             Setblock(rng.NextDouble() * block);
+            SetItemValue(rng.NextDouble() * itemValue);
+            SetItemWeight(rng.NextDouble() * itemWeight);
+            SetItemRarity(rng.Next(1,10) * rarity);
             Displaystats();
         }
 
@@ -126,9 +138,15 @@ namespace ShaRPGame.Model.Gameplay.Items.Model
         {
             string block = String.Format("{0:0.00}", this.Block);
             string resist = String.Format("{0:0.00}", this.Resist);
+            string value = String.Format("{0:0.00}", this.ItemValue);
+            string weight = String.Format("{0:0.00}", this.ItemWeight);
             Gui.PrintLine($"Name: {this.ItemName}\n" +
                           $"Item Description: {this.ItemDescription}\n" +
                           $"Type: {this.ItemType}\n"+
+                          $"Durability: {this.Durability}\n"+
+                          $"Rarirty: {this.ItemRarity}\n"+
+                          $"Value: {value} gold\n"+
+                          $"Weight: {weight}kg\n"+
                           $"Block: {block}\n" +
                           $"Resist: {resist}");
         }

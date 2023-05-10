@@ -1,4 +1,5 @@
-﻿using ShaRPGame.Model.Gameplay.Items.Model;
+﻿using ShaRPG.View.GUI;
+using ShaRPGame.Model.Gameplay.Items.Model;
 using ShaRPGame.View;
 
 namespace ShaRPGame.Controllers.DebugMenu
@@ -18,7 +19,8 @@ namespace ShaRPGame.Controllers.DebugMenu
                 case "L":
                     Console.Clear();
                     LightArmor lightArmor = new LightArmor();
-                    lightArmor.GenerateRandom(10, 10);
+                    lightArmor.GenerateRandom(10, 10, 100, 10, 10);
+                    MainMenuView.Menu();
                     break;
             }
         }
