@@ -23,11 +23,7 @@ namespace ShaRPGame.Controllers
                     string name = Gui.GetInputIntBasic("What´s the name of your character?");
                     string description = Gui.GetInputIntBasic("Tell me something about your character?");
                     string jobClass = Gui.GetInputIntBasic("What´s their class?");
-                    while (age <= 17 | age >= 70) // Is 70 yo too old for adventuring? Sorry, that was a strange thing to ask.
-                    {
-                        age = Convert.ToInt32(Gui.GetInputIntBasic("Finally tell me their age."));
-                        Gui.Alert("Sorry, the character cannot be underaged.");
-                    }
+                    age = AgeInput(age);
                     CharacterCreatorModel.CreateCharacter(name, description, jobClass, age);
                     CharacterCreatorView.Menu();
                     break;
@@ -37,6 +33,25 @@ namespace ShaRPGame.Controllers
                     CharacterCreatorView.Menu();
                     break;
             }
+        }
+
+        // Made this spurious method jsut ebcause I want the controller to feel a little bti neater for me.
+        private static int AgeInput(int age)
+        {
+            while (age <= 17 | age >= 70) // Is 70 yo too old for adventuring? Sorry, that was a strange thing to ask.
+            {
+                try
+                {
+                    age = Convert.ToInt32(Gui.GetInputIntBasic("Finally tell me their age."));
+                    Gui.Alert("Sorry, the character cannot be under 18 or over 70.");
+                }
+                catch (Exception ex)
+                {
+                    Gui.Alert(ex.Message);
+                }
+            }
+
+            return age;
         }
     }
 }
