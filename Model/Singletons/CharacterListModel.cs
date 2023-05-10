@@ -1,5 +1,4 @@
 ﻿using ShaRPGame.Model.Entities.Models.PlayerCharacters;
-using System.Collections;
 
 namespace ShaRPGame.Model.InstanceModels
 {
