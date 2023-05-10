@@ -1,11 +1,4 @@
-﻿using ShaRPG.View.GUI;
-using ShaRPGame.Model;
-using ShaRPGame.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ShaRPGame.View;
 
 namespace ShaRPGame.Controllers
 {

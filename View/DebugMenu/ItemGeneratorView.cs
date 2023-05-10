@@ -1,11 +1,5 @@
 ﻿using ShaRPG.View.GUI;
-using ShaRPGame.Controllers;
 using ShaRPGame.Controllers.DebugMenu;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShaRPGame.View.DebugMenu
 {
